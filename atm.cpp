@@ -1,3 +1,6 @@
+/*dzikri
+ririn
+anida*/
 #include <iostream>
 #include <cstdlib>
 using namespace std;
