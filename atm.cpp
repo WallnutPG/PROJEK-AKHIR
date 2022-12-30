@@ -1,3 +1,8 @@
+/*
+DZIKRI
+RIRIN
+ANIDA
+*/
 #include <iostream>
 #include <cstdlib>
 using namespace std;
