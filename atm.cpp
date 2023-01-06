@@ -1,7 +1,10 @@
 /*
-DZIKRI
-RIRIN
-ANIDA
+KELOMPOK 2 :
+ANIDA AULIA
+DZIKRI MAULANA NURRAFI
+RIRIN SAFITRI
+
+TEKNIK INFORMATIKA 1
 */
 #include <iostream>
 #include <cstdlib>
@@ -21,19 +24,19 @@ void footer(){
 }
 
 class pin{
-    int kode_pin(){
-        return 723456;
+    int kode_pin(){ // inisialisasi kode pin
+        return 723456; // kode pin yang diinput
     }
     public :
     int config_pin(){
         return kode_pin();
     }
     char* nama(){
-        return (char*) "Vladilena Milize";
+        return (char*) "Vladelina Milize";
     }
-    // char* rekening(){
-    //     afhui
-    // }
+    char* rek(){
+        return (char*) "23612616294798";
+    }
 };
 
 int main(){
@@ -103,9 +106,9 @@ int main(){
 
             case 2 :
                 setor :
-                cout << "===================" << endl;
-                cout << "    SETOR TUNAI    " << endl;
-                cout << "===================" << endl;
+                cout << "=====================================" << endl;
+                cout << "||           SETOR TUNAI           ||" << endl;
+                cout << "=====================================" << endl;
                 cout << "Silahkan Masukan PIN Anda" << endl;
                 cout << "=> "; cin >> pin_input;
                 cout << endl;
@@ -136,9 +139,9 @@ int main(){
 
             case 3 :
                 saldo:
-                cout << "===================" << endl;
-                cout << "     CEK SALDO     " << endl;
-                cout << "===================" << endl;
+                cout << "=====================================" << endl;
+                cout << "||            CEK SALDO            ||" << endl;
+                cout << "=====================================" << endl;
                 cout << "Silahkan Masukan PIN Anda" << endl;
                 cout << "=> "; cin >> pin_input;
                 cout << endl;
@@ -162,20 +165,40 @@ int main(){
                 break;
 
             case 0 :
-                cout << "5. Rekening" << endl;
-                cout << "6. Mutasi" << endl;
+                cout << "=====================================" << endl;
+                cout << "||          MENU  LAINNYA          ||" << endl;
+                cout << "=====================================" << endl;
+                cout << "|| 5. Cek Rekening                 ||" << endl;
+                cout << "|| 99. Kembali                     ||" << endl;
+                cout << "=====================================" << endl;
                 cout << "=> "; cin >> kode;
                 cout << endl;
-
                 switch(kode){
-                    case 5:
-                    cout << "test" << endl;
-                    system("pause");
-                    system("cls");
-                    header();
-                    goto menu;
-                    break;
-                }
+                    case 5 :
+                        rek:
+                        cout << "Silahkan Masukan PIN Anda" << endl;
+                        cout << "=> "; cin >> pin_input;
+                        cout << endl;
+                        if(pin_input==kode_pin.config_pin()){
+                            cout << "No Rekening Anda => " << kode_pin.rek() << ""; cout << endl;
+                            system("pause");
+                            system("cls");
+                            header();
+                            goto menu;
+                        } else{
+                            cout << "PIN Yang Anda Masukan Salah" << endl;
+                            cout << "Silahkan Masukan PIN Dengan Benar" << endl;
+                            system("pause");
+                            system("cls");
+                            header();
+                            goto rek;
+                        } break;
+                    
+                    case 99 :
+                        system("cls");
+                        header();
+                        goto menu;
+                } break;
                 
             default :
                 cout << "Kode Yang Anda Pilih Tidak Ada, Mohon Masukan Kode 1-4" << endl << endl;
